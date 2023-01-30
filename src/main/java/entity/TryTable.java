@@ -4,12 +4,14 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "try_table", schema = "public", catalog = "Try")
+@NamedQuery(name = "SELECT",query = "SELECT e FROM TryTable e ")
 public class TryTable {
     private int id;
     private String tryColoms;
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;
